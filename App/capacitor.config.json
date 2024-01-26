@@ -1,0 +1,14 @@
+{
+	"appId": "com.gkprojects.request",
+	"appName": "GK Request",
+	"webDir": "dist",
+	"plugins": {
+		"SplashScreen": {
+			"launchAutoHide": true,
+			"launchShowDuration": 300,
+			"backgroundColor": "#fff",
+			"showSpinner": true,
+			"androidSpinnerStyle": "small"
+		}
+	}
+}

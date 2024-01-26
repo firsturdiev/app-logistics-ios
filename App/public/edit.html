@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Logistics App</title>
+  <meta name="viewport"
+    content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="msapplication-tap-highlight" content="no" />
+  <link rel="icon" type="image/x-icon" href="./assets/icon/favicon.ico" />
+  <link rel="manifest" href="data:application/json;base64,ewogICJuYW1lIjogIkFwcCIsCiAgInNob3J0X25hbWUiOiAiQXBwIiwKICAic3RhcnRfdXJsIjogImluZGV4Lmh0bWwiLAogICJkaXNwbGF5IjogInN0YW5kYWxvbmUiLAogICJpY29ucyI6IFsKICAgIHsKICAgICAgInNyYyI6ICJhc3NldHMvaWNvbnMvaWNvbi00OC53ZWJwIiwKICAgICAgInR5cGUiOiAiaW1hZ2UvcG5nIiwKICAgICAgInNpemVzIjogIjQ4eDQ4IiwKICAgICAgInB1cnBvc2UiOiAiYW55IG1hc2thYmxlIgogICAgfSwKICAgIHsKICAgICAgInNyYyI6ICJhc3NldHMvaWNvbnMvaWNvbi03Mi53ZWJwIiwKICAgICAgInR5cGUiOiAiaW1hZ2UvcG5nIiwKICAgICAgInNpemVzIjogIjcyeDcyIiwKICAgICAgInB1cnBvc2UiOiAiYW55IG1hc2thYmxlIgogICAgfSwKICAgIHsKICAgICAgInNyYyI6ICJhc3NldHMvaWNvbnMvaWNvbi05Ni53ZWJwIiwKICAgICAgInR5cGUiOiAiaW1hZ2UvcG5nIiwKICAgICAgInNpemVzIjogIjk2eDk2IiwKICAgICAgInB1cnBvc2UiOiAiYW55IG1hc2thYmxlIgogICAgfSwKICAgIHsKICAgICAgInNyYyI6ICJhc3NldHMvaWNvbnMvaWNvbi0xMjgud2VicCIsCiAgICAgICJ0eXBlIjogImltYWdlL3BuZyIsCiAgICAgICJzaXplcyI6ICIxMjh4MTI4IiwKICAgICAgInB1cnBvc2UiOiAiYW55IG1hc2thYmxlIgogICAgfSwKICAgIHsKICAgICAgInNyYyI6ICJhc3NldHMvaWNvbnMvaWNvbi0xOTIud2VicCIsCiAgICAgICJ0eXBlIjogImltYWdlL3BuZyIsCiAgICAgICJzaXplcyI6ICIxOTJ4MTkyIiwKICAgICAgInB1cnBvc2UiOiAiYW55IG1hc2thYmxlIgogICAgfSwKICAgIHsKICAgICAgInNyYyI6ICJhc3NldHMvaWNvbnMvaWNvbi0yNTYud2VicCIsCiAgICAgICJ0eXBlIjogImltYWdlL3BuZyIsCiAgICAgICJzaXplcyI6ICIyNTZ4MjU2IiwKICAgICAgInB1cnBvc2UiOiAiYW55IG1hc2thYmxlIgogICAgfSwKICAgIHsKICAgICAgInNyYyI6ICJhc3NldHMvaWNvbnMvaWNvbi01MTIud2VicCIsCiAgICAgICJ0eXBlIjogImltYWdlL3BuZyIsCiAgICAgICJzaXplcyI6ICI1MTJ4NTEyIiwKICAgICAgInB1cnBvc2UiOiAiYW55IG1hc2thYmxlIgogICAgfQogIF0sCiAgImJhY2tncm91bmRfY29sb3IiOiAiIzFCNDI0MiIsCiAgInRoZW1lX2NvbG9yIjogIiMwMDgwODAiCn0K" />
+  
+  <meta name="theme-color" content="#008080" />
+  <link rel="stylesheet" href="/assets/style.847bf02d.css">
+</head>
+
+<body>
+  <div class="container" style="display: none;">
+    <input type="text" placeholder="Enter Telegram group link">
+    <button>SAVE</button>
+  </div>
+  
+  <script>
+    document.querySelector('.container').style.display = 'flex';
+
+    // Save link to local storage
+
+    document.querySelector('button').addEventListener('click', () => {
+      const urlRegex = /^https:\/\/t\.me\/\+([a-zA-Z0-9]+)$/;
+      const link = document.querySelector('input').value;
+      if (!urlRegex.test(link)) {
+        alert('Invalid link!');
+        return;
+      }
+      localStorage.setItem('link', urlRegex.exec(link)[1]);
+      window.location.replace('index.html');
+    })
+
+  </script>
+</body>
+
+</html>
